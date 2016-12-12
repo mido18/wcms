@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = Wcms::VERSION
   s.authors     = ["Mohamed Abdelrahman"]
   s.email       = ["mohamed_abdelrahman@icloud.com"]
-  s.homepage    = "www.mido.com"
+  s.homepage    = "https://github.com/mido18/wcms"
   s.summary     = "This is web content mangement system"
   s.description = "This is web content mangement system for company profiles"
   s.license     = "MIT"
