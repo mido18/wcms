@@ -1,0 +1,11 @@
+.panel.panel-default
+  .panel-heading
+    %h1.panel-title
+      Editing <%= singular_table_name.capitalize %>
+  .panel-body
+    .row
+      .col-md-12
+        = render 'form'
+  -#= link_to 'Show', @<%= singular_table_name %>
+  -#\|
+  -#= link_to 'Back', <%= index_helper %>_path

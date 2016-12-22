@@ -1,0 +1,18 @@
+.panel.panel-default
+  .panel-heading
+    %h1
+      <%= singular_table_name.capitalize %>
+  .panel-body
+    .row
+      .col-md-12
+        %p#notice= notice
+        %br
+<% for attribute in attributes -%>
+        %p
+          %strong <%= attribute.human_name %>:
+          = @<%= singular_table_name %>.<%= attribute.name %>
+<% end -%>
+
+        = link_to 'Edit', edit_<%= singular_table_name %>_path(@<%= singular_table_name %>)
+        \|
+        = link_to 'Back', <%= index_helper %>_path

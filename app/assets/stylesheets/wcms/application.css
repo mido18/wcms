@@ -11,5 +11,20 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_tree .
+ *= require template/font-awesome
+ *= require template/bootstrap.min
+ *= require template/bootstrap-override
+ *= require template/weather-icons.min
+ *= require template/jquery-ui-1.10.3
+ *= require template/animate.min
+ *= require template/animate.delay
+ *= require template/toggles
+ *= require template/lato
+ *= require template/roboto
+ *= require template/style.default
+ *= require template/bootstrap-timepicker.min
+ *= require template/select2
+ *= require template/wysiwyg-color
+ *= require template/bootstrap-wysihtml5
  *= require_self
  */
