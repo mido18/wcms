@@ -1,0 +1,32 @@
+.panel.panel-default
+  .panel-heading
+    %h1 Listing Sliders
+  .panel-body
+    .row
+      .col-md-12
+        %p#notice= notice
+        .table-responsive
+          %table.table.mb30
+            %thead
+              %tr
+                %th Title
+                %th Description
+                %th Image
+                %th
+                %th
+                %th
+            %tbody
+              - @sliders.each do |slider|
+                %tr
+                  %td= slider.title
+                  %td= slider.description
+                  %td= image_tag slider.image.url(:thumb)
+                  %td.table-action
+                    = link_to slider do
+                      %i.fa.fa-eye
+                    = link_to edit_slider_path(slider) do
+                      %i.fa.fa-pencil
+                    = link_to slider, method: :delete, data: { confirm: 'Are you sure?' } do
+                      %i.fa.fa-trash-o
+          %br
+          = link_to 'New Slider', new_slider_path,class: "btn btn-primary"

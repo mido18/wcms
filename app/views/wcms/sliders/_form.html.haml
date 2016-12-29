@@ -1,0 +1,22 @@
+= form_for @slider do |f|
+  - if @slider.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@slider.errors.count, "error")} prohibited this slider from being saved:"
+      %ul
+        - @slider.errors.full_messages.each do |msg|
+          %li= msg
+
+  .form-group
+    = f.label :title,class:"col-sm-3 control-label"
+    .col-sm-6
+      = f.text_field :title,class:"form-control"
+  .form-group
+    = f.label :description,class:"col-sm-3 control-label"
+    .col-sm-6
+      = f.text_area :description,class:"form-control"
+  .form-group
+    = f.label :image,class:"col-sm-3 control-label"
+    .col-sm-6
+      = f.file_field :image,class:"form-control"
+  .actions
+    = f.submit 'Save',class: "btn btn-primary"

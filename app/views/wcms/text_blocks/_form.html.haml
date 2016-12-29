@@ -1,0 +1,18 @@
+= form_for @text_block do |f|
+  - if @text_block.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@text_block.errors.count, "error")} prohibited this text_block from being saved:"
+      %ul
+        - @text_block.errors.full_messages.each do |msg|
+          %li= msg
+
+  .form-group
+    = f.label :name,class:"col-sm-3 control-label"
+    .col-sm-7
+      = f.text_field :name,class:"form-control"
+  .form-group
+    = f.label :body,class:"col-sm-3 control-label"
+    .col-sm-7
+      = f.text_area :body,class:"form-control",id:"rich-texteditor", cols: "30", rows: "10"
+  .actions
+    = f.submit 'Save',class: "btn btn-primary"

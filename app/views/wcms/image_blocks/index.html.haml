@@ -1,0 +1,30 @@
+.panel.panel-default
+  .panel-heading
+    %h1 Listing Image_blocks
+  .panel-body
+    .row
+      .col-md-12
+        %p#notice= notice
+        .table-responsive
+          %table.table.mb30
+            %thead
+              %tr
+                %th Name
+                %th
+                %th
+                %th
+            %tbody
+              - @image_blocks.each do |image_block|
+                %tr
+                  %td= image_block.name
+                  %td.table-action
+                    = link_to image_block do
+                      %i.fa.fa-eye
+                  %td.table-action
+                    = link_to edit_image_block_path(image_block) do
+                      %i.fa.fa-pencil
+                  %td.table-action
+                    = link_to  image_block, method: :delete, data: { confirm: 'Are you sure?' } do
+                      %i.fa.fa-trash-o
+          %br
+          = link_to 'New Image block', new_image_block_path,class: "btn btn-primary"

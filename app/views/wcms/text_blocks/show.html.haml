@@ -1,0 +1,19 @@
+.panel.panel-default
+  .panel-heading
+    %h1
+      Text Block
+  .panel-body
+    .row
+      .col-md-12
+        %p#notice= notice
+        %br
+        %p
+          %strong Name:
+          = @text_block.name
+        %p
+          %strong Body:
+          = raw @text_block.body
+
+        = link_to 'Edit', edit_admin_text_block_path(@text_block)
+        \|
+        = link_to 'Back', admin_text_blocks_path

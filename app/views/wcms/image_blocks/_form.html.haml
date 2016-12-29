@@ -1,0 +1,18 @@
+= form_for @image_block do |f|
+  - if @image_block.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@image_block.errors.count, "error")} prohibited this image_block from being saved:"
+      %ul
+        - @image_block.errors.full_messages.each do |msg|
+          %li= msg
+
+  .form-group
+    = f.label :name,class:"col-sm-3 control-label"
+    .col-sm-6
+      = f.text_field :name,class:"form-control"
+  .form-group
+    = f.label :image,class:"col-sm-3 control-label"
+    .col-sm-6
+      = f.file_field :image,class:"form-control"
+  .actions
+    = f.submit 'Save',class: "btn btn-primary"

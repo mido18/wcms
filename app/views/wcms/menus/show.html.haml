@@ -1,0 +1,23 @@
+.panel.panel-default
+  .panel-heading
+    %h1
+      Menu
+  .panel-body
+    .row
+      .col-md-12
+        %p#notice= notice
+        %p
+          %strong Title:
+          = @menu.title
+        %p
+          %strong Link:
+          = @menu.link
+        %p
+          %strong Order:
+          = @menu.order
+        -#%p
+        -#  %strong Parent:
+        -#  = @menu.parent
+        = link_to 'Edit', edit_menu_path(@menu)
+        |
+        = link_to 'Back', menus_path

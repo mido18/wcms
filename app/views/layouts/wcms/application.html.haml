@@ -1,0 +1,107 @@
+-#!!!
+-#%html
+-#  %head
+-#    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+-#    %title Wcms
+-#    = stylesheet_link_tag    "wcms/application", media: "all"
+-#    = javascript_include_tag "wcms/application"
+-#    = csrf_meta_tags
+-#  %body
+-#    = yield
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1.0, maximum-scale=1.0", :name => "viewport"}/
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %link{:href => "images/favicon.png", :rel => "shortcut icon", :type => "image/png"}/
+    %title
+      = "WCMS ADMIN"
+    = stylesheet_link_tag    "wcms/application", media: "all"
+    = javascript_include_tag "wcms/application"
+    = csrf_meta_tags
+  %body{'data-no-turbolink'=>"true"}
+    / Preloader
+    #preloader
+      #status
+        %i.fa.fa-spinner.fa-spin
+    %section
+      .leftpanel
+        .logopanel
+          %h1
+            %span [
+            = "WCMS ADMIN"
+            %span ]
+        / logopanel
+        .leftpanelinner
+          %h5.sidebartitle
+            = "Main Menu"
+          %ul.nav.nav-pills.nav-stacked.nav-bracket
+            %li{:class => "#{'active' if controller_name == 'menu' }"}
+              = link_to menus_path do
+                %i.fa.fa-cog
+                %span
+                  = "Menu"
+            %li{:class => "#{'active' if controller_name == 'sliders' }"}
+              = link_to sliders_path do
+                %i.fa.fa-cog
+                %span Sliders
+            %li{:class => "#{'active' if controller_name == 'text_blocks' }"}
+              = link_to text_blocks_path do
+                %i.fa.fa-cog
+                %span Text Blocks
+            %li{:class => "#{'active' if controller_name == 'image_blocks' }"}
+              = link_to image_blocks_path do
+                %i.fa.fa-cog
+                %span Image Blocks
+      / infosummary
+      / leftpanelinner
+      / leftpanel
+      .mainpanel
+        .headerbar
+          %a.menutoggle
+            %i.fa.fa-bars
+          .header-right
+            %ul.headermenu
+              %li
+                .btn-group
+                  -#%button.btn.btn-default.dropdown-toggle{"data-toggle" => "dropdown", :type => "button"}
+                  -#  = current_admin.email
+                  -#  %span.caret
+                  -#%ul.dropdown-menu.dropdown-menu-usermenu.pull-right
+                  -#  %li
+                  -#    = link_to  edit_user_registration_path do
+                  -#      %i.glyphicon.glyphicon-user
+                  -#      = t("navigation.edit_profile")
+                  -#  %li
+                  -#    = link_to( destroy_user_session_path, :method => :delete) do
+                  -#      %i.glyphicon.glyphicon-log-out
+                  -#      = t("navigation.logout")
+        / header-right
+        / headerbar
+        .pageheader
+          %h2
+            = yield :page_name
+        -#= render 'shared/notice'
+        = yield
+      / panel-body
+      / panel
+      / col-sm-6
+      / contentpanel
+      / mainpanel
+      .rightpanel
+        / Nav tabs
+        %ul.nav.nav-tabs.nav-justified
+          %li.active
+            %a{"data-toggle" => "tab", :href => "#rp-alluser"}
+              %i.fa.fa-users
+          %li
+            %a{"data-toggle" => "tab", :href => "#rp-favorites"}
+              %i.fa.fa-heart
+          %li
+            %a{"data-toggle" => "tab", :href => "#rp-history"}
+              %i.fa.fa-clock-o
+          %li
+            %a{"data-toggle" => "tab", :href => "#rp-settings"}
+              %i.fa.fa-gear
+                / Tab panes

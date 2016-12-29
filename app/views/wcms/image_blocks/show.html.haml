@@ -1,0 +1,16 @@
+.panel.panel-default
+  .panel-heading
+    %h1
+      Image_block
+  .panel-body
+    .row
+      .col-md-12
+        %p#notice= notice
+        %br
+        %p
+          %strong Name:
+          = @image_block.name
+
+        = link_to 'Edit', edit_image_block_path(@image_block)
+        \|
+        = link_to 'Back', image_blocks_path

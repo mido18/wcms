@@ -1,0 +1,29 @@
+= form_for(menu) do |f|
+  - if menu.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(menu.errors.count, "error")} prohibited this text_block from being saved:"
+      %ul
+        - menu.errors.full_messages.each do |msg|
+          %li= msg
+
+  .form-group
+    = f.label :title,class:"col-sm-3 control-label"
+    .col-sm-7
+      = f.text_field :title,class:"form-control"
+
+  .form-group
+    = f.label :link,class:"col-sm-3 control-label"
+    .col-sm-7
+      = f.text_field :link,class:"form-control"
+
+  .form-group
+    = f.label :order , class:"col-sm-3 control-label"
+    .col-sm-7
+      = f.number_field :order,class:"form-control"
+
+  -#.form-group
+  -#  = f.label :parent_id , class:"col-sm-3 control-label"
+  -#  .col-sm-7
+  -#    = f.number_field :parent_id,class:"form-control"
+  .actions
+    = f.submit 'Save',class: "btn btn-primary"

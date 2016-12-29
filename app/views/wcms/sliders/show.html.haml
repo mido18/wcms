@@ -1,0 +1,21 @@
+.panel.panel-default
+  .panel-heading
+    %h1
+      Slider
+  .panel-body
+    .row
+      .col-md-12
+        %p#notice= notice
+        %br
+        %p
+          %strong Title:
+          = @slider.title
+        %p
+          %strong Description:
+          = @slider.description
+        %p
+          %strong Image:
+          = image_tag @slider.image.url(:thumb)
+        = link_to 'Edit', edit_admin_slider_path(@slider)
+        \|
+        = link_to 'Back', admin_sliders_path
