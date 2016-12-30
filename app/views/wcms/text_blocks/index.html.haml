@@ -20,11 +20,11 @@
                   %td= text_block.name
                   %td= truncate(text_block.body, length: 100)
                   %td.table-action
-                    = link_to [:admin,text_block] do
+                    = link_to text_block do
                       %i.fa.fa-eye
-                    = link_to edit_admin_text_block_path(text_block) do
+                    = link_to edit_text_block_path(text_block) do
                       %i.fa.fa-pencil
-                    = link_to  [:admin,text_block], method: :delete, data: { confirm: 'Are you sure?' } do
+                    = link_to  text_block, method: :delete, data: { confirm: 'Are you sure?' } do
                       %i.fa.fa-trash-o
           %br
           = link_to 'New Text block', new_text_block_path,class: "btn btn-primary"

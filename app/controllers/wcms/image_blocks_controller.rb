@@ -72,7 +72,7 @@ module Wcms
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def image_block_params
-        params.require(:image_block).permit(:name)
+        params.require(:image_block).permit(:name,:image)
       end
   end
 end

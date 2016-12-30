@@ -31,7 +31,7 @@ module Wcms
 
       respond_to do |format|
         if @text_block.save
-          format.html { redirect_to [:admin,@text_block], notice: 'Text block was successfully created.' }
+          format.html { redirect_to @text_block, notice: 'Text block was successfully created.' }
           format.json { render :show, status: :created, location: @text_block }
         else
           format.html { render :new }
@@ -45,7 +45,7 @@ module Wcms
     def update
       respond_to do |format|
         if @text_block.update(text_block_params)
-          format.html { redirect_to [:admin,@text_block], notice: 'Text block was successfully updated.' }
+          format.html { redirect_to @text_block, notice: 'Text block was successfully updated.' }
           format.json { render :show, status: :ok, location: @text_block }
         else
           format.html { render :edit }

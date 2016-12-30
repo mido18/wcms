@@ -10,7 +10,9 @@
         %p
           %strong Name:
           = @image_block.name
-
+        %p
+          %strong Image:
+          = image_tag @image_block.image.url(:large)
         = link_to 'Edit', edit_image_block_path(@image_block)
         \|
         = link_to 'Back', image_blocks_path
