@@ -1,0 +1,19 @@
+.panel.panel-default
+  .panel-heading
+    %h1 New Menu
+  .panel-body
+    .row
+      .col-md-12
+        = form_tag({controller: "wcms/menus", action: "add_translation"}, method: "post", class: "nifty_form") do
+
+          .form-group
+            = label_tag :title,nil,class:"col-sm-3 control-label"
+            .col-sm-7
+              = text_field_tag :title,nil,class:"form-control"
+
+          .form-group
+            = label_tag :language,nil,class:"col-sm-3 control-label"
+            .col-sm-7
+              = text_field_tag :language, nil , class:"form-control"
+          .form-group
+            = button_tag "Submit", class: "btn btn-primary"

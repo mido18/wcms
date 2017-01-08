@@ -13,7 +13,7 @@
                 %th Link
                 %th Order
                 -#%th Parent
-                %th{:colspan => "3"}
+                %th{:colspan => "4"}
             %tbody
               - @menus.each do |menu|
                 %tr
@@ -31,5 +31,7 @@
                       %i.fa.fa-pencil
                     = link_to  menu, method: :delete, data: { confirm: 'Are you sure?' } do
                       %i.fa.fa-trash-o
+                    = link_to menu_transaltion_path(menu.id) do
+                      %i.fa.fa-globe
           %br
           = link_to 'New Menu', new_menu_path,class: "btn btn-primary"

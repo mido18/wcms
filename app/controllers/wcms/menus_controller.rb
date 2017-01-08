@@ -50,6 +50,18 @@ module Wcms
       redirect_to menus_url, notice: 'Menu was successfully destroyed.'
     end
 
+    def translation
+    end
+
+    def add_translation
+      I18n.locale = params[:language].to_sym
+      menu = Menu.find params[:id]
+      menu.title = params[:title]
+      menu.save!
+      redirect_to menus_path
+    end
+
+
     private
       # Use callbacks to share common setup or constraints between actions.
       def set_menu

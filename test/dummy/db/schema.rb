@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171007004223) do
+ActiveRecord::Schema.define(version: 20171007004224) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,16 @@ ActiveRecord::Schema.define(version: 20171007004223) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+  end
+
+  create_table "wcms_menu_translations", force: :cascade do |t|
+    t.integer  "wcms_menu_id", null: false
+    t.string   "locale",       null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "title"
+    t.index ["locale"], name: "index_wcms_menu_translations_on_locale", using: :btree
+    t.index ["wcms_menu_id"], name: "index_wcms_menu_translations_on_wcms_menu_id", using: :btree
   end
 
   create_table "wcms_menus", force: :cascade do |t|

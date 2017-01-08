@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 5.0.0", ">= 5.0.0.1"
   s.add_dependency "haml"
   s.add_dependency "paperclip", "~> 5.0.0"
+  s.add_dependency 'globalize'
 
   s.add_development_dependency "pg"
   s.add_development_dependency "html2haml"
@@ -26,4 +27,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency "haml"
   s.add_development_dependency "erb2haml"
   s.add_development_dependency "paperclip", "~> 5.0.0"
+  s.add_development_dependency 'globalize'
 end
