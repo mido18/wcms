@@ -1,0 +1,17 @@
+.panel.panel-default
+  .panel-heading
+    %h1 Text Block
+  .panel-body
+    .row
+      .col-md-12
+        = form_tag({controller: "wcms/text_blocks", action: "add_translation"}, method: "post", class: "nifty_form") do
+          .form-group
+            = label_tag :body,nil,class:"col-sm-3 control-label"
+            .col-sm-7
+              = text_area_tag :body,nil,class:"form-control",id:"rich-texteditor", cols: "30", rows: "10"
+          .form-group
+            = label_tag :language,nil,class:"col-sm-3 control-label"
+            .col-sm-7
+              = text_field_tag :language, nil , class:"form-control"
+          .form-group
+            = button_tag "Submit", class: "btn btn-primary"

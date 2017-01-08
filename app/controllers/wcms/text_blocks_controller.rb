@@ -7,6 +7,7 @@ module Wcms
     # GET /text_blocks
     # GET /text_blocks.json
     def index
+      I18n.locale = :en
       @text_blocks = TextBlock.all
     end
 
@@ -40,10 +41,25 @@ module Wcms
       end
     end
 
+    def translation
+    end
+
+    def add_translation
+      TextBlock.transaction do
+        I18n.locale = params[:language].to_sym
+        text_block =  TextBlock.find params[:id]
+        text_block.body = params[:body]
+        text_block.save!
+        I18n.locale = :en
+      end
+      redirect_to text_blocks_path
+    end
+
     # PATCH/PUT /text_blocks/1
     # PATCH/PUT /text_blocks/1.json
     def update
       respond_to do |format|
+        I18n.locale = :en
         if @text_block.update(text_block_params)
           format.html { redirect_to @text_block, notice: 'Text block was successfully updated.' }
           format.json { render :show, status: :ok, location: @text_block }

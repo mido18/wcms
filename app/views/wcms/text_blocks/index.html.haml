@@ -11,9 +11,7 @@
               %tr
                 %th Name
                 %th Body
-                %th
-                %th
-                %th
+                %th{:colspan => "4"}
             %tbody
               - @text_blocks.each do |text_block|
                 %tr
@@ -26,5 +24,7 @@
                       %i.fa.fa-pencil
                     = link_to  text_block, method: :delete, data: { confirm: 'Are you sure?' } do
                       %i.fa.fa-trash-o
+                    = link_to text_block_transaltion_path(text_block.id) do
+                      %i.fa.fa-globe
           %br
           = link_to 'New Text block', new_text_block_path,class: "btn btn-primary"
