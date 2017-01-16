@@ -42,6 +42,7 @@ module Wcms
     end
 
     def translation
+      @text_block =  TextBlock.find_by_id params[:id]
     end
 
     def add_translation

@@ -26,4 +26,5 @@
 //= require template/wysihtml5-0.3.0.min
 //= require template/bootstrap-wysihtml5
 //= require template/custom
+//= require template/inception
 //= require_tree .

@@ -8,7 +8,7 @@
           .form-group
             = label_tag :body,nil,class:"col-sm-3 control-label"
             .col-sm-7
-              = text_area_tag :body,nil,class:"form-control",id:"rich-texteditor", cols: "30", rows: "10"
+              = text_area_tag :body,@text_block&.body,class:"form-control richtext",id:"rich-texteditor", cols: "30", rows: "10"
           .form-group
             = label_tag :language,nil,class:"col-sm-3 control-label"
             .col-sm-7
